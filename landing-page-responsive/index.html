@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ArtJunks Landing Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <!-- -->
+    <div class="navbar-container">
+      <div class="logo">ARTJUNKS</div>
+      <button class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-frame mobile-nav">
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Artists</a>
+          <a href="#">Careers</a>
+          <a href="#">News</a>
+          <a href="#">Company</a>
+        </nav>  
+        <a href="#" class="get-started">Get started</a>
+      </div>
+    </div>
+
+    <!-- hero content -->
+    <div class="hero-content">
+      <div class="line"></div>
+      <h1 class="hero-title">
+        Art pieces made easy accessible for everyone
+      </h1>
+      <p class="hero-description">
+        Learn, buy and trade art pieces of your favorite artist around the world by using crypto currencies.
+      </p>
+      <a href="#" class="learn-more">Learn more</a>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="news-section">
+    <div class="news-container">
+      <h2 class="news-title">Newest reads</h2>
+      <div class="news-cards">
+        <!-- card 1 -->
+        <div class="news-card">
+          <img src="landing-page-responsive/image/image.JPG" alt="News 1" class="news-image" />
+          <div class="news-content">
+            <p class="news-date">5 August, 2022</p>
+            <h3 class="news-heading">
+              France seeks to protect Russia's Morozov collection from seizure as masterpieces return home
+            </h3>
+            <a href="#" class="news-link">Read more →</a>
+          </div>
+        </div>
+        <!-- card 2 -->
+        <div class="news-card">
+          <img src="landing-page-responsive/image/image.JPG" alt="News 2" class="news-image" />
+          <div class="news-content">
+            <p class="news-date">5 August, 2022</p>
+            <h3 class="news-heading">
+              Picasso's muse as sea creature—will it break $100m at Sotheby's New York sale?
+            </h3>
+            <a href="#" class="news-link">Read more →</a>
+          </div>
+        </div>
+        <!-- card 3 -->
+        <div class="news-card">
+          <img src="landing-page-responsive/image/image.JPG" alt="News 3" class="news-image" />
+          <div class="news-content">
+            <p class="news-date">5 August, 2022</p>
+            <h3 class="news-heading">
+              Venice Biennale 2022: all the national pavilions, artists and curators
+            </h3>
+            <a href="#" class="news-link">Read more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  const hamburger = document.querySelector('.hamburger-menu');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const body = document.body;
+
+  /*click vào hamburger menu*/
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    
+    if (mobileNav.classList.contains('active')) {
+      body.style.overflow = 'hidden';
+    } else {
+      body.style.overflow = '';
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      body.style.overflow = ''; 
+    });
+  });
+</script>
+</body>
+</html>
